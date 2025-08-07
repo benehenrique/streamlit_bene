@@ -14,15 +14,6 @@ modelo_selecionado = st.selectbox("Selecione um modelo:", modelos)
 
 df = pd.read_excel(st.secrets['xlsx'], sheet_name=modelo_selecionado)
 
-if modelo_selecionado == 'roe_mom_excelente':
-    df = df.drop(columns=['security', 'Short Name', 'Percentile Rank(6 Month Alpha)', 'Percentile Rank(LF ROIC)', 'Percentile Rank(1 Year Total Return)'])
-elif modelo_selecionado == 'value_mom_long':
-    df = df.drop(columns=['security', 'Short Name', 'Percentile Rank(8 Month Alpha)','Price:D-1'])
-elif modelo_selecionado == 'all_factors_long':
-    df = df.drop(columns=['security', 'Short Name', 'Total Return YTD','Price:D-1', 'P/E'])
-elif modelo_selecionado == 'bdr':
-    df = df.drop(columns=['security', 'Short Name', 'Avg of Daily Equity Traded Val over 3 Months','Percentile Rank(6 Month Total Return)', 'Percentile Rank(180 Day Annualized Volat)'])
-
 st.dataframe(df)
 
 
@@ -107,4 +98,5 @@ if botao_grafico:
     )
 
     st.plotly_chart(fig)
+
 
