@@ -67,7 +67,6 @@ retornos = (data / data.iloc[0]) - 1
 
 if botao_tabela:
     ret_diario = data.pct_change()
-    retorno_5d = (1 + ret_diario).tail(5).prod() - 1
 
     # Criando o novo DataFrame
     retornos_periodos = pd.DataFrame(index=['5d', '21d', '63d', '126d', '252d'], columns=ret_diario.columns)
@@ -98,5 +97,6 @@ if botao_grafico:
     )
 
     st.plotly_chart(fig)
+
 
 
