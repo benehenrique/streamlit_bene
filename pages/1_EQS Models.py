@@ -14,7 +14,7 @@ modelo_selecionado = st.selectbox("Selecione um modelo:", modelos)
 
 df = pd.read_excel(st.secrets['xlsx'], sheet_name=modelo_selecionado)
 
-st.dataframe(df, height=500)
+st.dataframe(df, height=300)
 
 
 # botoes laterais
@@ -97,6 +97,7 @@ if botao_grafico:
     )
 
     st.plotly_chart(fig)
+
 
 
 
