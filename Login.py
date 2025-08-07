@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit_authenticator as stauth
 
 
-st.set_page_config(page_title='Bene Ativos', layout = 'wide')
+st.set_page_config(page_title='EQS Ativos', layout = 'wide')
 
 # user authentication
 credentials = {
@@ -32,5 +32,6 @@ elif st.session_state['authentication_status'] == None:
 elif st.session_state['authentication_status']:
 
     authenticator.logout('Logout','sidebar')
+
 
 
